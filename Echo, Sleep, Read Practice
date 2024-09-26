@@ -38,12 +38,12 @@ read yuck
 echo "Are you MAD?! You think I, an UP STANDING bash script, would like ${yuck^^}?!"
 sleep 4
 
-echo "Obviously I was wrong about us, and wrong about you, ${user^}."
+echo "Obviously I was wrong about us, and wrong about you, ${name^}."
 sleep 3
 
 echo "We can't continue like this. We had fun, but I just can't have you in my script anymore."
 sleep 2
 
-echo "Please don't run me again. Goodbye, ${user^}."
+echo "Please don't run me again. Goodbye, ${name^}."
 
 exit 0
