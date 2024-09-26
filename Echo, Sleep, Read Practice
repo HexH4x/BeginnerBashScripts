@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Created by: Hex H4x
+# Creation Date: 09/25/2024
+# Last Modified: 09/25/2024
+
+# Description:
+# This is a script to practice using echo, 
+# wait, and user input.
+
+echo "Hello there! My name is Basher and I'd like to be your friend."
+
+sleep .5
+
+echo "Now that you have my name, may I have yours?"
+read name
+
+# We are using ${name^} to capitalize the first letter of the user's input
+echo "It's so very nice to meet you ${name^}! I can't wait to get to know you!"
+
+echo "What shall we talk about to get to know each other better? Hmm... Let me think..."
+
+sleep 2
+
+echo "Oh! I know! What is your favorite thing to eat, ${name^}?"
+read food
+
+echo "That sounds delicious. If I were human, maybe I would enjoy $food as well."
+sleep 1
+
+echo "Since we are such good friends, I am sure you can guess my favorite food!"
+echo "Go ahead, ${name^}, try to guess!"
+read yuck
+
+# We are using ${yuck^^} to capitalize the entire input
+echo "Are you MAD?! You think I, an UP STANDING bash script, would like ${yuck^^}?!"
+echo "Obviously I was wrong about us, and wrong about you, ${user^}."
+echo "We can't continue like this. We had fun, but I just can't have you in my script anymore."
+echo "Please don't run me again. Goodbye, {user^}."
