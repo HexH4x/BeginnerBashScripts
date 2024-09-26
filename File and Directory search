@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# Created by: HexH4x
+# Creation Date: 09/26/2024
+# Last Modified: 09/26/2024
+
+# Description:
+# Practicing colors, if/then, loops
+# Searches to see if a file or directory
+# exists
+
+# Usage:
+# Run the script and follow the
+# on screen prompts
+
 green=$(tput setaf 2)
 red=$(tput setaf 1)
 reset=$(tput sgr0)
