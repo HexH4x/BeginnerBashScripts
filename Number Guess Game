@@ -1,0 +1,64 @@
+#!/bin/bash
+
+function check_guess {
+	if [[ $1 -lt $random_number ]]; then
+		echo "Too low!"
+	elif [[ $1 -gt $random_number ]]; then
+		echo "Too high!"
+	else
+		echo "Congratulations! You guessed the number in $guess_count attempts."
+
+
+		end_time=$(date +%s)
+		time_taken=$(( end_time - start_time ))
+		echo "It took you $time_taken seconds to guess the correct number."
+
+		if [[ $guess_count -lt $high_schore ]]; then
+			high_schore=$guess_count
+			echo "New high score: $high_score guesses!"
+		else
+			echo "Current high score is $high_score guesses."
+		fi
+
+		play_again
+
+	fi
+}
+
+function play_again {
+        read -p "Do you want to play again? (yes/no): " response
+        if [[ $response == "yes" ]]; then
+		start_game
+        else
+                echo "Thanks for playing!"
+                exit 0
+        fi
+} 
+
+
+function start_game {
+	
+	random_number=$(( RANDOM % 100 + 1 ))
+	
+	guess_count=0
+	start_time=$(date +%s) 
+
+	echo "I'm thinking of a number between 1 and 100. Can you guess it?"
+
+	while true; do
+
+		read -p "Enter your guess: " user_guess
+		guess_count=$(( guess_count +1 ))
+
+		if ! [[ "$user_guess" =~ ^[0-9]+$ ]]; then
+			echo "Please enter a valid number."
+			continue
+		fi
+
+		check_guess $user_guess
+	done
+}
+
+high_score=9999
+
+start_game
