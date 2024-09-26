@@ -49,7 +49,7 @@ while true; do
     if [ -d "$name" ]; then
       echo "${green}The directory $name exists.${reset}"
     else
-      echo "${red}The directory $name" does not exist.${reset}"
+      echo "${red}The directory $name does not exist.${reset}"
     fi
   fi
 done
