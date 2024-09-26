@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Created by: HexH4x
+# Creation Date: 09/25/2024
+# Last Modified: 09/25/2024
+
+# Description:
+# Practice using variables and printf
+
+# Usage:
+# Change student name, performance, 
+# status, and school name
+
+
+student="hex"
+performance="amazing"
+status="enrolled"
+school="superfake"
+
+# We use the ^ to capitalize the first letter of the name for consistent formatting
+# \n is used to go to the next line
+printf "To the parent or guardian of ${student^}:\n"
+
+# \t is used to indent
+printf "\t${student^}'s current performance in school is ${performance},\ntherefore their status for next semester will be: ${status}.\n"
+
+printf "If you feel there has been an error in your student's performance report, \nplease contact us at ${school^} Academy.\nWe wish you and ${student^} the best.\n"
+
+# \v will give us a vertical indent
+printf "\v \tSincerely, The teachers at ${school^} Academy\n"
+
+exit 0
