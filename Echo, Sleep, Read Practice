@@ -10,7 +10,7 @@
 
 echo "Hello there! My name is Basher and I'd like to be your friend."
 
-sleep .5
+sleep 1
 
 echo "Now that you have my name, may I have yours?"
 read name
@@ -18,15 +18,17 @@ read name
 # We are using ${name^} to capitalize the first letter of the user's input
 echo "It's so very nice to meet you ${name^}! I can't wait to get to know you!"
 
+sleep 2
+
 echo "What shall we talk about to get to know each other better? Hmm... Let me think..."
 
-sleep 2
+sleep 4
 
 echo "Oh! I know! What is your favorite thing to eat, ${name^}?"
 read food
 
 echo "That sounds delicious. If I were human, maybe I would enjoy $food as well."
-sleep 1
+sleep 3
 
 echo "Since we are such good friends, I am sure you can guess my favorite food!"
 echo "Go ahead, ${name^}, try to guess!"
@@ -34,6 +36,14 @@ read yuck
 
 # We are using ${yuck^^} to capitalize the entire input
 echo "Are you MAD?! You think I, an UP STANDING bash script, would like ${yuck^^}?!"
+sleep 4
+
 echo "Obviously I was wrong about us, and wrong about you, ${user^}."
+sleep 3
+
 echo "We can't continue like this. We had fun, but I just can't have you in my script anymore."
-echo "Please don't run me again. Goodbye, {user^}."
+sleep 2
+
+echo "Please don't run me again. Goodbye, ${user^}."
+
+exit 0
