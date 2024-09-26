@@ -1,0 +1,55 @@
+#!/bin/bash/
+
+# Created by: HexH4x
+# Creation Date: 09/26/2024
+# Last Modified: 09/26/2024
+
+# Description:
+# Exploring colors, read, echo, 
+# if/then, and loops
+
+# Usage:
+# Run the script and follow the on 
+# screen prompt
+
+green=$(tput setaf 2)
+red=$(tput setaf 1)
+reset=$(tput sgr0)
+
+while true; do
+  echo "Do you want to check a file or directory? (Enter 'f' for file, 'd' for directory, or type 'exit' to quit):"
+  read option
+
+  if [ "$option" == "exit" ]; then
+    echo "Exiting the program. Goodbye!"
+    break
+  fi
+
+  if [ "$option" != "f" ] && [ "$option" != "d" ]; then
+    echo "${red}Invalid input. Please enter 'f' for file, 'd' for directory, or 'exit' to quit.${reset}"
+    continue
+  fi
+
+  echo "Please enter the name (with extension for file) or type 'exit' to quit:"
+  read name
+  
+  if [ "$name" == "exit" ]; then
+    echo "Exiting the program. Goodbye!"
+    break
+  fi
+
+  if [ "$option" == "f" ]; then
+    if [ -f "$name" ]; then
+      echo "${green}The file $name exists.${reset}"
+    else
+      echo "${red}The file $name does not exist.${reset}"
+  fi
+
+  if [ "$option" == "d" ]; then
+    if [ -d "$name" ]; then
+      echo "${green}The directory $name exists.${reset}"
+    else
+      echo "${red}The directory $name" does not exist.${reset}"
+    fi
+  fi
+done
