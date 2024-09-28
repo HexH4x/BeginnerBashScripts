@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Created by: HexH4x
+# Description: Practice C-like for loops
+# Usage: Guessing game, 1-20, with 5 attempts
+
+
+target=$(( RANDOM % 20 + 1 ))
+max_attempts=5
+
+for (( i=1; i<=max_attempts; i++ ))
+do
+	read -p "Attempt $i/$max_attempts: Guess the number (between 1 and 20): " guess
+
+	if (( guess == target )); then
+		echo "Congratulations! You guessed it right!"
+		break
+	elif (( guess < target )); then
+		echo "Too low!"
+	else
+		echo "Too high!"
+	fi
+
+	if (( i == max_attempts )); then
+		echo "Sorry, you've used all attemptss. The correct number was $target."
+	fi
+done
