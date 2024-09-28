@@ -34,7 +34,7 @@ while true; do
 	echo "Please enture the name (with extension for file) or type 'exit' to quit:"
 	read name
 
-	if ["$name" == "exit" ]; then
+	if [ "$name" == "exit" ]; then
 		echo "Exiting the program. Goodbye!"
 		break
 	fi
