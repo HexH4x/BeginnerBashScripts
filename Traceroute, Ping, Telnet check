@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Created by: HexH4x
+
+# Description:
+# Uses Traceroute on target IP,
+# Attempts to ping target IP 5 times
+# Checks to see if ports 22, 80, and
+# 443 are open or closed
+
+# Usage:
+# Run script with target IP or web address
+# potentially scanme.nmap.org
+
+
+# Check if a target was provided as an argument
+if [ "$#" -ne 1 ]; then
+	echo "Usage: $0 <target>"
+	exit 1
+fi
+
+TARGET=$1
+
+# Use traceroute to map the path to the target
+echo "Tracing route to $TARGET..."
+traceroute $TARGET
+echo ""
+
+# Use ping to check if the target responds to ICMP echo requests
+echo "Pinging $TARGET to check connectivity..."
+ping -c 5 $TARGET
+if [ $? -eq 0 ]; then
+	echo "$TARGET is reachable via ping."
+else
+	echo "$TARGET did not respond to ICMP echo requests."
+fi
+echo ""
+
+# Use telnet to check if certain ports are open
+echo "Checking common ports on $TARGET using telnet..."
+for PORT in 22 80 443; do
+	echo "Checking port $PORT..."
+	(echo > /dev/tcp/$TARGET/$PORT) &>/dev/null && echo "Port $PORT is open" || echo "Port $PORT is closed"
+done
+
+echo ""
+echo "Script complete!"
