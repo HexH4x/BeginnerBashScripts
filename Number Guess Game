@@ -13,8 +13,8 @@ function check_guess {
 		time_taken=$(( end_time - start_time ))
 		echo "It took you $time_taken seconds to guess the correct number."
 
-		if [[ $guess_count -lt $high_schore ]]; then
-			high_schore=$guess_count
+		if [[ $guess_count -lt $high_score ]]; then
+			high_score=$guess_count
 			echo "New high score: $high_score guesses!"
 		else
 			echo "Current high score is $high_score guesses."
