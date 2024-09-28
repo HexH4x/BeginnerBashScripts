@@ -31,7 +31,7 @@ while true; do
 		continue
 	fi
 
-	echo "Please enture the name (with extension for file) or type 'exit' to quit:"
+	echo "Please enter the name (with extension for file) or type 'exit' to quit:"
 	read name
 
 	if [ "$name" == "exit" ]; then
