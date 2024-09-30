@@ -22,6 +22,6 @@ do
 	fi
 
 	if (( i == max_attempts )); then
-		echo "Sorry, you've used all attemptss. The correct number was $target."
+		echo "Sorry, you've used all attempts. The correct number was $target."
 	fi
 done
